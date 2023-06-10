@@ -7,6 +7,9 @@ import Checkout from "./Checkout";
 import Login from "./Login";
 import { auth } from "./firebase";
 import { useStateValue } from "./Stateprovider";
+import Payment from "./Payment";
+import CardPayment from "./CardPayment";
+import Orders from "./Orders";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -21,14 +24,12 @@ function App() {
           type: "SET_USER",
           user: authUser,
         });
-
       } else {
         // the user is logged out
         dispatch({
           type: "SET_USER",
           user: null,
         });
-        
       }
     });
 
@@ -53,11 +54,38 @@ function App() {
             }
           />
           <Route
+            path="/payment"
+            element={
+              <>
+                <Header />
+                <Payment />
+              </>
+            }
+          />
+          <Route
+            path="/payment/card-details"
+            element={
+              <>
+                <Header />
+                <CardPayment />
+              </>
+            }
+          />
+          <Route
             path="/"
             element={
               <>
                 <Header />
                 <Home />
+              </>
+            }
+          />
+          <Route
+            path="/orders"
+            element={
+              <>
+                <Header />
+                <Orders />
               </>
             }
           />

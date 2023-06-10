@@ -13,7 +13,7 @@ function Header() {
     if (user) {
       auth.signOut();
     }
-  }
+  };
 
   return (
     <div className="header">
@@ -31,17 +31,22 @@ function Header() {
       </div>
 
       <div className="header_nav">
-      <Link to={!user && '/login'}>
+        <Link to={!user && "/login"}>
           <div onClick={handleAuthenticaton} className="header_option">
-            <span className="header_optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
-            <span className="header_optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
+            <span className="header_optionLineOne">
+              Hello {!user ? "Guest" : user.email}
+            </span>
+            <span className="header_optionLineTwo">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </div>
         </Link>
-
-        <div className="header_option">
-          <span className="headr_optionLineOne"> Retrun </span>
-          <span className="headr_optionLineTwo"> & Orders</span>
-        </div>
+        <Link to="/orders">
+          <div className="header_option">
+            <span className="headr_optionLineOne"> Retrun </span>
+            <span className="headr_optionLineTwo"> & Orders</span>
+          </div>
+        </Link>
         <div className="header_option">
           <span className="headr_optionLineOne"> Your </span>
           <span className="headr_optionLineTwo">Prime</span>
