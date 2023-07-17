@@ -1,6 +1,6 @@
 import React from "react";
-import "./Payment.css";
-import { useStateValue } from "./Stateprovider";
+import "../CSS/Payment.css";
+import { useStateValue } from "../Stateprovider";
 import CheckoutProduct from "./CheckoutProduct";
 import { Link } from "react-router-dom";
 
@@ -48,8 +48,9 @@ function Payment() {
           </div>
           <div className="payment_details">
             {/* Stripe magic will go */}
-              <Link to={'/payment/card-details'}><h1>Card details</h1></Link>
-            
+            <Link to={"/payment/card-details"}>
+              <h1>Card details</h1>
+            </Link>
           </div>
         </div>
       </div>

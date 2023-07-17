@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import Header from "./Header";
-import Home from "./Home";
+import Header from "./Components/Header";
+import Home from "./Components/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Checkout from "./Checkout";
-import Login from "./Login";
+import Checkout from "./Components/Checkout";
+import Login from "./Components/Login";
 import { auth } from "./firebase";
 import { useStateValue } from "./Stateprovider";
-import Payment from "./Payment";
-import CardPayment from "./CardPayment";
-import Orders from "./Orders";
+import Payment from "./Components/Payment";
+import CardPayment from "./Components/CardPayment";
+import Orders from "./Components/Orders";
 
 function App() {
   const [{}, dispatch] = useStateValue();

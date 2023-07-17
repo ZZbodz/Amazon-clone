@@ -1,9 +1,9 @@
 import React from "react";
-import "./CardPayment.css";
-import { useStateValue } from "./Stateprovider";
+import "../CSS/CardPayment.css";
+import { useStateValue } from "../Stateprovider";
 import { Link, Navigate } from "react-router-dom";
-import { db } from "./firebase";
-import { getBasketTotal } from "./reducer";
+import { db } from "../firebase";
+import { getBasketTotal } from "../reducer";
 
 function CardPayment() {
   const [{ basket, user }, dispatch] = useStateValue();
